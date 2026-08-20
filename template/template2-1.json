@@ -1,43 +1,122 @@
 {
   "slide": {
-    "type": "cover_title_slide",
+    "type": "grid_card_showcase_slide",
     "aspect_ratio": "16:9",
     "layout": {
-      "description": "centered_vertical_stack_dual_logo_top_centered_title_below",
-      "columns": 1,
-      "rows": 3
+      "description": "logo_top_left_title_below_intro_paragraph_then_2x3_grid_of_icon_cards_each_with_image",
+      "columns": 3,
+      "rows": 2
     },
     "style": {
-      "background": "plain_white_with_thick_dark_top_bottom_border",
-      "overall_style": "minimal_corporate",
-      "alignment": "center"
+      "background": "warm_off_white",
+      "overall_style": "elegant_corporate_editorial",
+      "alignment": "left"
     },
     "elements": [
       {
         "id": "el_1",
         "type": "logo",
-        "role": "secondary_partner_or_agency_logo",
-        "position": { "x": 38, "y": 8, "width": 24, "height": 12 },
-        "content": "small secondary logo mark with wordmark and tagline beneath it",
-        "typography": { "size": "small", "weight": "regular", "alignment": "center" },
+        "role": "brand_logo_top_left",
+        "position": { "x": 2, "y": 2, "width": 16, "height": 7 },
+        "content": "company logo mark with wordmark and small tagline beneath",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left" },
         "style": { "color": "mixed_dark_and_accent" }
       },
       {
         "id": "el_2",
-        "type": "logo",
-        "role": "main_client_or_brand_logo",
-        "position": { "x": 15, "y": 26, "width": 70, "height": 16 },
-        "content": "large primary company logo with icon mark and wordmark",
-        "typography": { "size": "large", "weight": "bold", "alignment": "center" },
-        "style": { "color": "accent_bright" }
+        "type": "title",
+        "role": "main_slide_title",
+        "position": { "x": 2, "y": 10, "width": 96, "height": 10 },
+        "content": "large bold main section title, letter-spaced",
+        "typography": { "size": "xlarge", "weight": "bold", "alignment": "left", "style": "serif" },
+        "style": { "color": "dark" }
       },
       {
         "id": "el_3",
-        "type": "title",
-        "role": "main_slide_title",
-        "position": { "x": 12, "y": 55, "width": 76, "height": 16 },
-        "content": "two-line centered title describing the presentation purpose",
-        "typography": { "size": "large", "weight": "regular", "alignment": "center", "style": "serif" },
+        "type": "divider",
+        "role": "title_underline_with_center_mark",
+        "position": { "x": 2, "y": 20, "width": 96, "height": 2 },
+        "content": "full-width thin horizontal rule with small centered symbol",
+        "style": { "color": "accent", "thickness": "hairline" }
+      },
+      {
+        "id": "el_4",
+        "type": "text_block",
+        "role": "intro_descriptive_paragraph",
+        "position": { "x": 2, "y": 23, "width": 55, "height": 6 },
+        "content": "short two-line introductory paragraph explaining the slide's purpose",
+        "typography": { "size": "medium", "weight": "regular", "alignment": "left" },
+        "style": { "color": "dark" }
+      },
+      {
+        "id": "el_5",
+        "type": "card",
+        "role": "channel_card_1",
+        "position": { "x": 2, "y": 30, "width": 31, "height": 30 },
+        "content": "card with icon badge, numbered title, short description, and supporting image mockup below",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left" },
+        "style": { "color": "dark", "background": "white", "border_radius": "medium", "border": "thin_light" }
+      },
+      {
+        "id": "el_6",
+        "type": "card",
+        "role": "channel_card_2",
+        "position": { "x": 35, "y": 30, "width": 31, "height": 30 },
+        "content": "card with icon badge, numbered title, short description, and supporting image mockup below (browser/website style)",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left" },
+        "style": { "color": "dark", "background": "white", "border_radius": "medium", "border": "thin_light" }
+      },
+      {
+        "id": "el_7",
+        "type": "card",
+        "role": "channel_card_3",
+        "position": { "x": 68, "y": 30, "width": 31, "height": 30 },
+        "content": "card with icon badge, numbered title, short description, and supporting image mockup below (outdoor screen style)",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left" },
+        "style": { "color": "dark", "background": "white", "border_radius": "medium", "border": "thin_light" }
+      },
+      {
+        "id": "el_8",
+        "type": "card",
+        "role": "channel_card_4",
+        "position": { "x": 2, "y": 62, "width": 31, "height": 30 },
+        "content": "card with icon badge, numbered title, short description, and supporting image mockup below (phone-in-hand style)",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left" },
+        "style": { "color": "dark", "background": "white", "border_radius": "medium", "border": "thin_light" }
+      },
+      {
+        "id": "el_9",
+        "type": "card",
+        "role": "channel_card_5",
+        "position": { "x": 35, "y": 62, "width": 31, "height": 30 },
+        "content": "card with icon badge, numbered title, short description, and supporting image mockup below (invitation card style)",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left" },
+        "style": { "color": "dark", "background": "white", "border_radius": "medium", "border": "thin_light" }
+      },
+      {
+        "id": "el_10",
+        "type": "card",
+        "role": "channel_card_6",
+        "position": { "x": 68, "y": 62, "width": 31, "height": 30 },
+        "content": "card with icon badge, numbered title, short description, and supporting image mockup below (multi-phone social media UI style)",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left" },
+        "style": { "color": "dark", "background": "white", "border_radius": "medium", "border": "thin_light" }
+      },
+      {
+        "id": "el_11",
+        "type": "divider",
+        "role": "footer_separator",
+        "position": { "x": 2, "y": 94, "width": 96, "height": 1 },
+        "content": "thin full-width horizontal rule above footer",
+        "style": { "color": "accent", "thickness": "hairline" }
+      },
+      {
+        "id": "el_12",
+        "type": "footer",
+        "role": "footer_tagline_and_page_number",
+        "position": { "x": 2, "y": 96, "width": 96, "height": 4 },
+        "content": "small icon plus tagline text on the left, page number on the right",
+        "typography": { "size": "xsmall", "weight": "regular", "alignment": "left" },
         "style": { "color": "dark" }
       }
     ]

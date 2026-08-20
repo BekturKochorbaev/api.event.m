@@ -1,67 +1,130 @@
 {
   "slide": {
-    "type": "about_us_split_slide",
+    "type": "three_column_concept_comparison_slide",
     "aspect_ratio": "16:9",
     "layout": {
-      "description": "left_column_centered_text_stack_right_full_height_team_photo",
-      "columns": 2,
-      "rows": 1
+      "description": "vertical_rotated_label_left_edge_three_equal_image_columns_each_with_top_caption_and_bottom_feature_card",
+      "columns": 3,
+      "rows": 2
     },
     "style": {
-      "background": "white_left_photo_right",
-      "overall_style": "bold_corporate_editorial",
-      "alignment": "center"
+      "background": "dark_charcoal_with_full_bleed_photo_columns",
+      "overall_style": "premium_event_concept_showcase",
+      "alignment": "left"
     },
     "elements": [
       {
         "id": "el_1",
-        "type": "title",
-        "role": "main_slide_title",
-        "position": { "x": 3, "y": 5, "width": 55, "height": 22 },
-        "content": "large bold centered multi-line statement headline",
-        "typography": { "size": "xlarge", "weight": "extrabold", "alignment": "center", "style": "serif" },
-        "style": { "color": "dark" }
+        "type": "text",
+        "role": "vertical_price_or_key_stat_label",
+        "position": { "x": 2, "y": 30, "width": 6, "height": 45 },
+        "content": "short price or key figure, rotated vertically along the left margin",
+        "typography": { "size": "large", "weight": "regular", "alignment": "center", "style": "sans-serif", "orientation": "rotated_90" },
+        "style": { "color": "light" }
       },
       {
         "id": "el_2",
-        "type": "text_block",
-        "role": "descriptive_paragraph",
-        "position": { "x": 5, "y": 30, "width": 51, "height": 22 },
-        "content": "centered descriptive paragraph explaining company background, history and scope of services",
-        "typography": { "size": "medium", "weight": "bold", "alignment": "center", "style": "serif" },
-        "style": { "color": "dark" }
-      },
-      {
-        "id": "el_3",
-        "type": "title",
-        "role": "closing_statement_secondary_headline",
-        "position": { "x": 3, "y": 58, "width": 55, "height": 35 },
-        "content": "large bold centered multi-line closing statement, emphasizing quality and professionalism",
-        "typography": { "size": "xlarge", "weight": "extrabold", "alignment": "center", "style": "serif" },
-        "style": { "color": "dark" }
-      },
-      {
-        "id": "el_4",
         "type": "image",
-        "role": "main_visual",
-        "position": { "x": 58, "y": 0, "width": 42, "height": 100 },
-        "content": "full-bleed vertical photograph, group portrait against a plain textured wall, occupying entire right half of slide",
+        "role": "concept_visual_column_1",
+        "position": { "x": 15, "y": 2, "width": 28, "height": 96 },
+        "content": "first of three concept visuals, full-height photographic column showing a themed installation with overlaid caption and logo",
         "style": {
           "shape": "rectangle_full_bleed",
           "border_radius": "none",
-          "border": "none",
+          "border": "thin_vertical_divider",
           "background_or_block": "background_bleed",
           "aspect_ratio": "portrait_tall"
         }
       },
       {
-        "id": "el_5",
-        "type": "logo",
-        "role": "brand_logo_overlay_on_image",
-        "position": { "x": 63, "y": 4, "width": 30, "height": 12 },
-        "content": "small brand logo with wordmark and tagline, overlaid in top area of the photograph",
+        "id": "el_3",
+        "type": "text",
+        "role": "concept_caption_1",
+        "position": { "x": 17, "y": 4, "width": 24, "height": 5 },
+        "content": "short bold caption naming the first concept, overlaid on the image top",
+        "typography": { "size": "medium", "weight": "bold", "alignment": "center" },
+        "style": { "color": "dark" }
+      },
+      {
+        "id": "el_4",
+        "type": "card",
+        "role": "feature_list_card_1",
+        "position": { "x": 17, "y": 75, "width": 24, "height": 20 },
+        "content": "dark semi-transparent card with 3 feature rows, each an icon paired with a short two-line description",
         "typography": { "size": "small", "weight": "regular", "alignment": "left" },
-        "style": { "color": "mixed_dark_and_accent" }
+        "style": { "color": "light", "background": "translucent_dark_overlay", "border_radius": "medium", "item_count": 3 }
+      },
+      {
+        "id": "el_5",
+        "type": "image",
+        "role": "concept_visual_column_2",
+        "position": { "x": 44, "y": 2, "width": 28, "height": 96 },
+        "content": "second of three concept visuals, full-height photographic column showing a themed installation with overlaid caption and logo",
+        "style": {
+          "shape": "rectangle_full_bleed",
+          "border_radius": "none",
+          "border": "thin_vertical_divider",
+          "background_or_block": "background_bleed",
+          "aspect_ratio": "portrait_tall"
+        }
+      },
+      {
+        "id": "el_6",
+        "type": "text",
+        "role": "concept_caption_2",
+        "position": { "x": 46, "y": 4, "width": 24, "height": 5 },
+        "content": "short bold caption naming the second concept, overlaid on the image top",
+        "typography": { "size": "medium", "weight": "bold", "alignment": "center" },
+        "style": { "color": "dark" }
+      },
+      {
+        "id": "el_7",
+        "type": "card",
+        "role": "feature_list_card_2",
+        "position": { "x": 46, "y": 75, "width": 24, "height": 20 },
+        "content": "dark semi-transparent card with 3 feature rows, each an icon paired with a short two-line description",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left" },
+        "style": { "color": "light", "background": "translucent_dark_overlay", "border_radius": "medium", "item_count": 3 }
+      },
+      {
+        "id": "el_8",
+        "type": "image",
+        "role": "concept_visual_column_3",
+        "position": { "x": 73, "y": 2, "width": 26, "height": 96 },
+        "content": "third of three concept visuals, full-height photographic column showing a themed installation with overlaid caption and logo",
+        "style": {
+          "shape": "rectangle_full_bleed",
+          "border_radius": "none",
+          "border": "thin_vertical_divider",
+          "background_or_block": "background_bleed",
+          "aspect_ratio": "portrait_tall"
+        }
+      },
+      {
+        "id": "el_9",
+        "type": "text",
+        "role": "concept_caption_3",
+        "position": { "x": 75, "y": 4, "width": 22, "height": 5 },
+        "content": "short bold caption naming the third concept, overlaid on the image top",
+        "typography": { "size": "medium", "weight": "bold", "alignment": "center" },
+        "style": { "color": "dark" }
+      },
+      {
+        "id": "el_10",
+        "type": "card",
+        "role": "feature_list_card_3",
+        "position": { "x": 75, "y": 75, "width": 22, "height": 20 },
+        "content": "dark semi-transparent card with 3 feature rows, each an icon paired with a short two-line description",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left" },
+        "style": { "color": "light", "background": "translucent_dark_overlay", "border_radius": "medium", "item_count": 3 }
+      },
+      {
+        "id": "el_11",
+        "type": "divider",
+        "role": "column_separator_lines",
+        "position": { "x": 43, "y": 2, "width": 1, "height": 96 },
+        "content": "thin vertical hairline separating image columns",
+        "style": { "color": "light", "thickness": "hairline" }
       }
     ]
   }
