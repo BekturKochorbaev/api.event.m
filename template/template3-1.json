@@ -1,0 +1,50 @@
+{
+  "slide": {
+    "type": "cover_title_slide",
+    "aspect_ratio": "16:9",
+    "layout": {
+      "description": "title_left_image_right_location_date_bottom_left",
+      "columns": 2,
+      "rows": 1
+    },
+    "style": {
+      "background": "solid_black",
+      "overall_style": "bold_dramatic_corporate",
+      "alignment": "left"
+    },
+    "elements": [
+      {
+        "id": "el_1",
+        "type": "title",
+        "role": "main_slide_title",
+        "position": { "x": 2, "y": 30, "width": 48, "height": 40 },
+        "content": "large two-line main title, vertically centered on the left half",
+        "typography": { "size": "xlarge", "weight": "regular", "alignment": "left", "style": "serif" },
+        "style": { "color": "light" }
+      },
+      {
+        "id": "el_2",
+        "type": "text",
+        "role": "location_and_date_label",
+        "position": { "x": 4, "y": 90, "width": 20, "height": 5 },
+        "content": "short location and year label",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left", "style": "sans-serif" },
+        "style": { "color": "light" }
+      },
+      {
+        "id": "el_3",
+        "type": "image",
+        "role": "main_visual",
+        "position": { "x": 50, "y": 20, "width": 48, "height": 60 },
+        "content": "main visual related to the slide topic, standalone photographic block on the right half",
+        "style": {
+          "shape": "rectangle",
+          "border_radius": "none",
+          "border": "none",
+          "background_or_block": "standalone_block",
+          "aspect_ratio": "landscape"
+        }
+      }
+    ]
+  }
+}

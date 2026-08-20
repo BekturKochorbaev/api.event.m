@@ -1,0 +1,59 @@
+{
+  "slide": {
+    "type": "title_numbered_list_image_slide",
+    "aspect_ratio": "16:9",
+    "layout": {
+      "description": "top_title_full_width_below_numbered_list_left_image_right",
+      "columns": 2,
+      "rows": 2
+    },
+    "style": {
+      "background": "solid_black",
+      "overall_style": "minimal_dark_corporate",
+      "alignment": "left"
+    },
+    "elements": [
+      {
+        "id": "el_1",
+        "type": "title",
+        "role": "main_slide_title",
+        "position": { "x": 2, "y": 22, "width": 60, "height": 12 },
+        "content": "short title heading ending with a colon",
+        "typography": { "size": "xlarge", "weight": "regular", "alignment": "left", "style": "serif" },
+        "style": { "color": "light" }
+      },
+      {
+        "id": "el_2",
+        "type": "bullet_list",
+        "role": "numbered_key_points",
+        "position": { "x": 4, "y": 42, "width": 32, "height": 25 },
+        "content": "3 numbered list items, some wrapping to two lines",
+        "typography": { "size": "large", "weight": "regular", "alignment": "left", "style": "serif" },
+        "style": { "color": "light", "marker_style": "numbered" }
+      },
+      {
+        "id": "el_3",
+        "type": "text",
+        "role": "stray_bullet_marker",
+        "position": { "x": 2, "y": 78, "width": 3, "height": 3 },
+        "content": "small isolated punctuation mark below the list",
+        "typography": { "size": "medium", "weight": "regular", "alignment": "left" },
+        "style": { "color": "light" }
+      },
+      {
+        "id": "el_4",
+        "type": "image",
+        "role": "main_visual",
+        "position": { "x": 36, "y": 39, "width": 62, "height": 58 },
+        "content": "main visual related to the slide topic, standalone photographic block on the right side",
+        "style": {
+          "shape": "rectangle",
+          "border_radius": "none",
+          "border": "none",
+          "background_or_block": "standalone_block",
+          "aspect_ratio": "landscape"
+        }
+      }
+    ]
+  }
+}

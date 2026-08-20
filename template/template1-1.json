@@ -1,0 +1,118 @@
+{
+  "slide": {
+    "type": "title_content_slide",
+    "aspect_ratio": "16:9",
+    "layout": {
+      "description": "left_column_text_right_fullbleed_image_with_bottom_icon_row",
+      "columns": 2,
+      "rows": 2
+    },
+    "style": {
+      "background": "light_neutral_with_photographic_fade",
+      "overall_style": "ethnic_heritage_editorial",
+      "alignment": "left"
+    },
+    "elements": [
+      {
+        "id": "el_1",
+        "type": "title",
+        "role": "main_slide_title",
+        "position": { "x": 4, "y": 8, "width": 45, "height": 12 },
+        "content": "main presentation title, short bold heading",
+        "typography": { "size": "xlarge", "weight": "bold", "alignment": "left", "style": "serif" },
+        "style": { "color": "dark" }
+      },
+      {
+        "id": "el_2",
+        "type": "subtitle",
+        "role": "title_translation_or_secondary_heading",
+        "position": { "x": 4, "y": 19, "width": 40, "height": 5 },
+        "content": "secondary line supporting the main title",
+        "typography": { "size": "medium", "weight": "regular", "alignment": "left", "style": "sans-serif", "letter_spacing": "wide" },
+        "style": { "color": "dark" }
+      },
+      {
+        "id": "el_3",
+        "type": "divider",
+        "role": "section_separator_with_accent_mark",
+        "position": { "x": 4, "y": 25, "width": 25, "height": 1 },
+        "content": "thin horizontal rule with small centered diamond accent",
+        "style": { "color": "accent", "thickness": "hairline" }
+      },
+      {
+        "id": "el_4",
+        "type": "text",
+        "role": "section_label_bilingual",
+        "position": { "x": 4, "y": 28, "width": 35, "height": 4 },
+        "content": "short descriptive label, bilingual pairing",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left" },
+        "style": { "color": "medium" }
+      },
+      {
+        "id": "el_5",
+        "type": "quote",
+        "role": "inspirational_quote_with_icon",
+        "position": { "x": 4, "y": 37, "width": 30, "height": 10 },
+        "content": "short two-line quotation in quotation marks",
+        "typography": { "size": "medium", "weight": "regular", "alignment": "left", "style": "italic_serif" },
+        "style": { "color": "dark", "icon_above": true }
+      },
+      {
+        "id": "el_6",
+        "type": "bullet_list",
+        "role": "supporting_key_points",
+        "position": { "x": 4, "y": 55, "width": 35, "height": 30 },
+        "content": "3-5 bullet points, each with small icon marker, two-line entries",
+        "typography": { "size": "small", "weight": "medium", "alignment": "left" },
+        "style": { "color": "dark", "marker_style": "small_diamond_icon", "accent_color": "muted_red" }
+      },
+      {
+        "id": "el_7",
+        "type": "image",
+        "role": "main_visual",
+        "position": { "x": 22, "y": 0, "width": 78, "height": 88 },
+        "content": "main visual related to the slide topic, wide panoramic scene fading into background on the left edge",
+        "style": {
+          "shape": "rectangle_full_bleed",
+          "border_radius": "none",
+          "border": "none",
+          "background_or_block": "background_bleed",
+          "edge_treatment": "left_edge_faded_gradient_into_page_background"
+        }
+      },
+      {
+        "id": "el_8",
+        "type": "icon",
+        "role": "decorative_focal_emblem_on_image",
+        "position": { "x": 55, "y": 12, "width": 15, "height": 15 },
+        "content": "central decorative silhouette emblem overlaying the main visual",
+        "style": { "color": "dark_silhouette" }
+      },
+      {
+        "id": "el_9",
+        "type": "shape",
+        "role": "structural_frame_element_on_visual",
+        "position": { "x": 55, "y": 30, "width": 30, "height": 8 },
+        "content": "horizontal signage/banner bar within the visual bearing repeated title text",
+        "style": { "color": "dark", "shape": "rounded_rectangle" }
+      },
+      {
+        "id": "el_10",
+        "type": "divider",
+        "role": "footer_separator",
+        "position": { "x": 4, "y": 92, "width": 92, "height": 1 },
+        "content": "thin full-width horizontal rule above footer row",
+        "style": { "color": "accent", "thickness": "hairline" }
+      },
+      {
+        "id": "el_11",
+        "type": "footer",
+        "role": "category_tag_row",
+        "position": { "x": 4, "y": 94, "width": 92, "height": 6 },
+        "content": "row of 3 equally spaced items, each with a small pictogram icon followed by a two-line bilingual label, separated by thin vertical dividers",
+        "typography": { "size": "small", "weight": "semibold", "alignment": "left" },
+        "style": { "color": "dark", "item_count": 3, "separator": "vertical_hairline" }
+      }
+    ]
+  }
+}

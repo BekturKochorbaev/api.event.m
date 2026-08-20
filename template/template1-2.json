@@ -1,0 +1,118 @@
+{
+  "slide": {
+    "type": "detail_breakdown_slide",
+    "aspect_ratio": "16:9",
+    "layout": {
+      "description": "numbered_title_top_left_bullet_list_left_central_image_callout_circles_right_material_footer_bottom",
+      "columns": 3,
+      "rows": 3
+    },
+    "style": {
+      "background": "light_neutral_with_thick_dark_outer_border",
+      "overall_style": "ethnic_heritage_editorial_infographic",
+      "alignment": "left"
+    },
+    "elements": [
+      {
+        "id": "el_1",
+        "type": "title",
+        "role": "numbered_main_slide_title",
+        "position": { "x": 4, "y": 6, "width": 55, "height": 10 },
+        "content": "numbered section title, short bold heading",
+        "typography": { "size": "xlarge", "weight": "bold", "alignment": "left", "style": "serif" },
+        "style": { "color": "dark" }
+      },
+      {
+        "id": "el_2",
+        "type": "subtitle",
+        "role": "title_translation_or_secondary_heading",
+        "position": { "x": 4, "y": 16, "width": 30, "height": 5 },
+        "content": "secondary line supporting the main title, bilingual pairing",
+        "typography": { "size": "medium", "weight": "regular", "alignment": "left", "style": "sans-serif" },
+        "style": { "color": "dark" }
+      },
+      {
+        "id": "el_3",
+        "type": "divider",
+        "role": "section_separator_with_accent_mark",
+        "position": { "x": 4, "y": 22, "width": 18, "height": 1 },
+        "content": "thin horizontal rule with small centered diamond accent",
+        "style": { "color": "accent", "thickness": "hairline" }
+      },
+      {
+        "id": "el_4",
+        "type": "bullet_list",
+        "role": "supporting_key_points",
+        "position": { "x": 4, "y": 28, "width": 16, "height": 55 },
+        "content": "4 bullet points, each with small icon marker, multi-line entries, generous vertical spacing",
+        "typography": { "size": "small", "weight": "medium", "alignment": "left" },
+        "style": { "color": "dark", "marker_style": "small_diamond_icon", "accent_color": "muted_red" }
+      },
+      {
+        "id": "el_5",
+        "type": "image",
+        "role": "main_visual",
+        "position": { "x": 18, "y": 15, "width": 62, "height": 78 },
+        "content": "main visual related to the slide topic, wide scene with faded left edge blending into page background",
+        "style": {
+          "shape": "rectangle_full_bleed",
+          "border_radius": "none",
+          "border": "none",
+          "background_or_block": "background_bleed",
+          "edge_treatment": "left_edge_faded_gradient_into_page_background"
+        }
+      },
+      {
+        "id": "el_6",
+        "type": "image_grid",
+        "role": "callout_detail_circles",
+        "position": { "x": 82, "y": 15, "width": 8, "height": 78 },
+        "content": "vertical stack of 4 circular cropped close-up images extracted from the main visual, connected by thin leader lines to points on the main image",
+        "style": { "shape": "circle", "border_radius": "full", "border": "none", "count": 4, "connector_style": "thin_curved_line" }
+      },
+      {
+        "id": "el_7",
+        "type": "text_block",
+        "role": "callout_captions",
+        "position": { "x": 91, "y": 15, "width": 8, "height": 78 },
+        "content": "4 short caption blocks, each aligned to one circular callout image, 2-3 lines each",
+        "typography": { "size": "xsmall", "weight": "regular", "alignment": "left" },
+        "style": { "color": "dark" }
+      },
+      {
+        "id": "el_8",
+        "type": "divider",
+        "role": "footer_separator",
+        "position": { "x": 4, "y": 90, "width": 92, "height": 1 },
+        "content": "thin full-width horizontal rule above footer row",
+        "style": { "color": "accent", "thickness": "hairline" }
+      },
+      {
+        "id": "el_9",
+        "type": "text",
+        "role": "footer_section_label",
+        "position": { "x": 4, "y": 93, "width": 10, "height": 5 },
+        "content": "short footer category label",
+        "typography": { "size": "small", "weight": "bold", "alignment": "left" },
+        "style": { "color": "accent" }
+      },
+      {
+        "id": "el_10",
+        "type": "image_grid",
+        "role": "material_swatch_row",
+        "position": { "x": 20, "y": 92, "width": 45, "height": 7 },
+        "content": "row of 4 small circular texture swatches, each followed by a short label, separated by thin vertical dividers",
+        "typography": { "size": "small", "weight": "medium", "alignment": "left" },
+        "style": { "shape": "circle", "item_count": 4, "separator": "vertical_hairline" }
+      },
+      {
+        "id": "el_11",
+        "type": "logo",
+        "role": "decorative_brand_emblem",
+        "position": { "x": 93, "y": 91, "width": 5, "height": 8 },
+        "content": "small decorative ornamental emblem, bottom right corner",
+        "style": { "color": "accent" }
+      }
+    ]
+  }
+}

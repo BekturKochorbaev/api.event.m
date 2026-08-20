@@ -1,0 +1,45 @@
+{
+  "slide": {
+    "type": "cover_title_slide",
+    "aspect_ratio": "16:9",
+    "layout": {
+      "description": "centered_vertical_stack_dual_logo_top_centered_title_below",
+      "columns": 1,
+      "rows": 3
+    },
+    "style": {
+      "background": "plain_white_with_thick_dark_top_bottom_border",
+      "overall_style": "minimal_corporate",
+      "alignment": "center"
+    },
+    "elements": [
+      {
+        "id": "el_1",
+        "type": "logo",
+        "role": "secondary_partner_or_agency_logo",
+        "position": { "x": 38, "y": 8, "width": 24, "height": 12 },
+        "content": "small secondary logo mark with wordmark and tagline beneath it",
+        "typography": { "size": "small", "weight": "regular", "alignment": "center" },
+        "style": { "color": "mixed_dark_and_accent" }
+      },
+      {
+        "id": "el_2",
+        "type": "logo",
+        "role": "main_client_or_brand_logo",
+        "position": { "x": 15, "y": 26, "width": 70, "height": 16 },
+        "content": "large primary company logo with icon mark and wordmark",
+        "typography": { "size": "large", "weight": "bold", "alignment": "center" },
+        "style": { "color": "accent_bright" }
+      },
+      {
+        "id": "el_3",
+        "type": "title",
+        "role": "main_slide_title",
+        "position": { "x": 12, "y": 55, "width": 76, "height": 16 },
+        "content": "two-line centered title describing the presentation purpose",
+        "typography": { "size": "large", "weight": "regular", "alignment": "center", "style": "serif" },
+        "style": { "color": "dark" }
+      }
+    ]
+  }
+}
