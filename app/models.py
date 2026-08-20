@@ -20,6 +20,8 @@ class Generation(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     template_id = models.CharField(max_length=64)
     answers = models.JSONField()
+    # optional client-supplied brand logo, composited onto every slide
+    logo = models.ImageField(upload_to='logos/', null=True, blank=True)
     status = models.CharField(
         max_length=16, choices=Status.choices, default=Status.PENDING, db_index=True
     )

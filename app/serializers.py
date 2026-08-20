@@ -8,9 +8,11 @@ class AnswersField(serializers.Field):
     """Validates the brief against the question definitions.
 
     Single-choice questions take a string, multi-choice take a list capped at
-    the question's ``max_choices``; every value must be a known option. All six
-    questions are required -- a partial brief produces a generic deck, which is
-    a worse failure than a clear 400.
+    the question's ``max_choices``, text/date take a free string; every option
+    value must be a known one. Questions marked ``required`` must be present --
+    a partial brief on those produces a generic deck, a worse failure than a
+    clear 400. Optional questions (name aside: date, audience, when/where) may
+    be omitted.
     """
 
     def to_representation(self, value):
@@ -24,12 +26,26 @@ class AnswersField(serializers.Field):
         for question in questions.QUESTIONS:
             key = question['key']
             allowed = questions.options_by_value(key)
+            required = questions.is_required(question)
 
             if key not in data or data[key] in (None, '', []):
-                errors[key] = 'This question is required.'
+                if required:
+                    errors[key] = 'This question is required.'
                 continue
 
             value = data[key]
+
+            if question['type'] in (questions.TEXT, questions.DATE):
+                if not isinstance(value, str):
+                    errors[key] = 'Expected a text value.'
+                elif len(value.strip()) > 120:
+                    errors[key] = 'Keep it under 120 characters.'
+                elif not value.strip() and required:
+                    errors[key] = 'This question is required.'
+                elif value.strip():
+                    cleaned[key] = value.strip()
+                continue
+
             if question['type'] == questions.SINGLE:
                 if isinstance(value, list):
                     errors[key] = 'Expected a single value, not a list.'
@@ -89,6 +105,8 @@ class GenerationSerializer(serializers.ModelSerializer):
 class GenerationCreateSerializer(serializers.Serializer):
     template_id = serializers.CharField()
     answers = AnswersField()
+    # optional brand logo as a data URL / base64 string, decoded in the view
+    logo = serializers.CharField(required=False, allow_blank=True)
 
     def validate_template_id(self, value):
         if not templates_repo.template_exists(value):

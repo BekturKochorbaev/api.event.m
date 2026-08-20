@@ -1,4 +1,9 @@
+import base64
+import binascii
+import logging
+
 from django.conf import settings
+from django.core.files.base import ContentFile
 from django.utils.decorators import method_decorator
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status
@@ -10,6 +15,28 @@ from . import questions, schemas, templates_repo
 from .models import Generation
 from .serializers import GenerationCreateSerializer, GenerationSerializer
 from .services.generator import start_generation
+
+logger = logging.getLogger(__name__)
+
+# Cap the decoded logo so a client cannot push a huge payload through the
+# JSON body. 4 MB of raw bytes is ample for any real logo.
+MAX_LOGO_BYTES = 4 * 1024 * 1024
+
+
+def _decode_logo(raw):
+    """Turn a data URL / base64 string into a file, or None. Never raises."""
+    if not raw or not isinstance(raw, str):
+        return None
+    payload = raw.split(',', 1)[1] if raw.startswith('data:') else raw
+    try:
+        data = base64.b64decode(payload, validate=True)
+    except (binascii.Error, ValueError):
+        logger.warning('logo: could not decode base64, ignoring')
+        return None
+    if not data or len(data) > MAX_LOGO_BYTES:
+        logger.warning('logo: empty or over %d bytes, ignoring', MAX_LOGO_BYTES)
+        return None
+    return ContentFile(data)
 
 
 @swagger_auto_schema(
@@ -64,6 +91,11 @@ def generation_create(request):
         answers=serializer.validated_data['answers'],
         demo_mode=settings.DEMO_MODE,
     )
+
+    logo_file = _decode_logo(serializer.validated_data.get('logo'))
+    if logo_file:
+        generation.logo.save(f'{generation.id}.png', logo_file, save=True)
+
     start_generation(generation.id)
 
     generation.refresh_from_db()

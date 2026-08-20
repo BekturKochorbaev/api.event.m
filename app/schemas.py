@@ -13,6 +13,13 @@ from . import questions, templates_repo
 
 
 def _answer_property(question):
+    if question['type'] in (questions.TEXT, questions.DATE):
+        return openapi.Schema(
+            type=openapi.TYPE_STRING,
+            description=question['title'],
+            example=question.get('placeholder', ''),
+        )
+
     values = [option['value'] for option in question['options']]
     description = '{title} ({labels})'.format(
         title=question['title'],
@@ -40,8 +47,12 @@ def _answer_property(question):
 
 ANSWERS_SCHEMA = openapi.Schema(
     type=openapi.TYPE_OBJECT,
-    description='Ответы на все шесть вопросов. Обязательны все.',
-    required=[question['key'] for question in questions.QUESTIONS],
+    description='Ответы на вопросы анкеты. Обязательные помечены в required.',
+    required=[
+        question['key']
+        for question in questions.QUESTIONS
+        if questions.is_required(question)
+    ],
     properties={
         question['key']: _answer_property(question)
         for question in questions.QUESTIONS
@@ -70,6 +81,9 @@ def _template_property():
 def _example_answers():
     example = {}
     for question in questions.QUESTIONS:
+        if question['type'] in (questions.TEXT, questions.DATE):
+            example[question['key']] = question.get('placeholder', '')
+            continue
         values = [option['value'] for option in question['options']]
         example[question['key']] = (
             values[0] if question['type'] == questions.SINGLE
