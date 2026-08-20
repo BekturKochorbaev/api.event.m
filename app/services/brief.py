@@ -29,6 +29,8 @@ def build_brief(answers):
     emotion = _hints(answers, 'emotion')
     reference = _hints(answers, 'reference')
     scale = _hints(answers, 'scale')
+    time_of_day = _hints(answers, 'time_of_day')
+    venue = _hints(answers, 'venue')
 
     return {
         'event_type': event_type[0] if event_type else 'a corporate event',
@@ -37,18 +39,36 @@ def build_brief(answers):
         'brand_attributes': _hints(answers, 'brand_attributes'),
         'reference': reference[0] if reference else 'a modern corporate keynote',
         'scale': scale[0] if scale else 'city-wide buzz',
+        # concrete, event-specific facts (free text passes straight through)
+        'event_name': (answers.get('event_name') or '').strip(),
+        'event_date': (answers.get('event_date') or '').strip(),
+        'audience': _hints(answers, 'audience'),
+        'time_of_day': time_of_day[0] if time_of_day else '',
+        'venue': venue[0] if venue else '',
         'labels': {key: _labels(answers, key) for key in questions.QUESTIONS_BY_KEY},
     }
 
 
 def brief_as_text(brief):
     """The brief as a prompt fragment."""
-    lines = [
-        f"Event: {brief['event_type']}.",
-        f"The audience should feel: {brief['emotion']}.",
-        f"Creative reference: {brief['reference']}.",
-        f"Reach and stature: {brief['scale']}.",
-    ]
+    lines = []
+    if brief['event_name']:
+        lines.append(
+            f'The event is named "{brief["event_name"]}". Use this exact name, '
+            f'spelled exactly like this, as the event/brand name on the slides; '
+            f'do not invent a different one.'
+        )
+    lines.append(f"Event: {brief['event_type']}.")
+    if brief['event_date']:
+        lines.append(f"Date: {brief['event_date']}.")
+    lines.append(f"The audience should feel: {brief['emotion']}.")
+    lines.append(f"Creative reference: {brief['reference']}.")
+    lines.append(f"Reach and stature: {brief['scale']}.")
+    if brief['audience']:
+        lines.append(f"Who attends: {', '.join(brief['audience'])}.")
+    setting = ' and '.join(p for p in (brief['time_of_day'], brief['venue']) if p)
+    if setting:
+        lines.append(f"Setting: {setting}.")
     if brief['goals']:
         lines.append(f"Business goals: {', '.join(brief['goals'])}.")
     if brief['brand_attributes']:

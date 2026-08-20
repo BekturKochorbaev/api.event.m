@@ -15,7 +15,7 @@ from django.db import close_old_connections
 from app import templates_repo
 from app.models import Generation, GeneratedImage
 
-from . import copywriter, openai_client, placeholder, prompt_builder, zone_prompt
+from . import branding, copywriter, openai_client, placeholder, prompt_builder, zone_prompt
 from .brief import brief_as_text, build_brief
 from .openai_client import GenerationError
 
@@ -74,11 +74,14 @@ def run_generation(generation_id):
         pages = templates_repo.load_pages(generation.template_id)
         brief_text = brief_as_text(build_brief(generation.answers))
         total = len(pages)
+        logo_path = generation.logo.path if generation.logo else None
 
         for page, slide in pages:
             filled, prompt, image_bytes = generate_page(
                 slide, brief_text, page, total, generation.demo_mode
             )
+            if logo_path:
+                image_bytes = branding.composite_logo(image_bytes, logo_path)
             image = GeneratedImage(
                 generation=generation,
                 page=page,
@@ -91,6 +94,17 @@ def run_generation(generation_id):
                 save=False,
             )
             image.save()
+
+        # Fixed Event M closing slide, always the last page. Drawn, not
+        # generated, so the contacts are exact -- see services/branding.py.
+        closing_page = total + 1
+        closing = GeneratedImage(generation=generation, page=closing_page)
+        closing.image.save(
+            f'{generation.id}/page-{closing_page}.png',
+            ContentFile(branding.render_closing_slide()),
+            save=False,
+        )
+        closing.save()
 
         generation.status = Generation.Status.DONE
         generation.error = ''

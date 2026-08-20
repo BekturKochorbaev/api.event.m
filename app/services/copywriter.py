@@ -87,7 +87,11 @@ Rules:
 - This is copy that goes ON a slide. Short, concrete, confident. No filler,
   no marketing cliches, no exclamation marks.
 - Obey every character limit strictly. Going over ruins the layout.
-- Invent a plausible event name, and reuse it consistently across elements.
+- If the creative brief above states an event name, use that exact name
+  everywhere it belongs, spelled exactly as given. Only invent a plausible
+  name if the brief gives none, and then reuse it consistently.
+- Ground the copy in the brief's concrete facts -- the event name, date,
+  audience and setting -- rather than generic event boilerplate.
 - Never write placeholder text, never restate the instruction back to me.
 - For list elements, separate items with a newline and no bullet characters.
 

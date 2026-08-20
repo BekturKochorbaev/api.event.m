@@ -11,10 +11,26 @@ model, which reasons about a Russian brief far more reliably in English.
 
 SINGLE = 'single'
 MULTI = 'multi'
+TEXT = 'text'    # free-text line (event name)
+DATE = 'date'    # free-text date, ISO or human
 
 
 def _opt(value, label, hint):
     return {'value': value, 'label': label, 'hint': hint}
+
+
+def _free(key, kind, title, subtitle, placeholder='', required=True):
+    """A free-input question (text/date) with no fixed options."""
+    return {
+        'key': key,
+        'type': kind,
+        'max_choices': 1,
+        'title': title,
+        'subtitle': subtitle,
+        'placeholder': placeholder,
+        'required': required,
+        'options': [],
+    }
 
 
 QUESTIONS = [
@@ -95,24 +111,24 @@ QUESTIONS = [
         'key': 'reference',
         'type': SINGLE,
         'max_choices': 1,
-        'title': 'На что похоже ваше событие?',
+        'title': 'Какой стиль вам ближе?',
         'subtitle': 'Один вариант',
         'options': [
-            _opt('apple', 'Презентация Apple',
+            _opt('apple', 'Минимализм и премиум',
                  'an Apple keynote: minimal, precise, generous negative space'),
-            _opt('formula1', 'Формула-1',
+            _opt('formula1', 'Скорость и драйв',
                  'Formula 1: speed, motion, high-contrast sponsor-grade graphics'),
-            _opt('fashion_week', 'Неделя моды',
+            _opt('fashion_week', 'Мода и эстетика',
                  'fashion week: editorial, austere, high-fashion typography'),
-            _opt('olympics', 'Олимпиада',
+            _opt('olympics', 'Масштаб и церемония',
                  'the Olympics: monumental, ceremonial, national scale'),
-            _opt('ted', 'TED',
+            _opt('ted', 'Идеи и выступления',
                  'a TED talk: ideas-first, clean stage, warm accent colour'),
-            _opt('red_bull', 'Red Bull',
+            _opt('red_bull', 'Экстрим и энергия',
                  'Red Bull: extreme, kinetic, adrenaline-driven'),
-            _opt('netflix', 'Премьера Netflix',
+            _opt('netflix', 'Кино, тёмно и эффектно',
                  'a Netflix premiere: cinematic, dark, dramatic key art'),
-            _opt('festival', 'Фестиваль',
+            _opt('festival', 'Ярко и празднично',
                  'a festival: vivid, crowded, celebratory'),
         ],
     },
@@ -133,9 +149,66 @@ QUESTIONS = [
                  'international stature; global, ceremonial tone'),
         ],
     },
+    # ── concrete facts about this specific event, so the deck stops reading
+    #    generic: the real name, date, who comes, and when/where it happens.
+    _free('event_name', TEXT,
+          'Как называется событие?',
+          'Это название попадёт на слайды',
+          placeholder='Например: Открытие ТЦ «Асыл»', required=False),
+    _free('event_date', DATE,
+          'Когда пройдёт?',
+          'Дата события',
+          placeholder='', required=False),
+    {
+        'key': 'audience',
+        'type': MULTI,
+        'max_choices': 3,
+        'title': 'Кто придёт?',
+        'subtitle': 'Выберите до 3 вариантов',
+        'required': False,
+        'options': [
+            _opt('clients', 'Клиенты', 'existing and prospective customers'),
+            _opt('partners', 'Партнёры и инвесторы', 'business partners and investors'),
+            _opt('press', 'Журналисты и СМИ', 'journalists and media'),
+            _opt('bloggers', 'Блогеры', 'bloggers and influencers'),
+            _opt('officials', 'Официальные лица', 'government officials and dignitaries'),
+            _opt('youth', 'Молодёжь', 'a young, trend-driven crowd'),
+            _opt('vip', 'VIP-гости', 'VIP and high-status guests'),
+            _opt('team', 'Сотрудники', 'the company\'s own employees and team'),
+        ],
+    },
+    {
+        'key': 'time_of_day',
+        'type': SINGLE,
+        'max_choices': 1,
+        'title': 'В какое время?',
+        'subtitle': 'Один вариант',
+        'required': False,
+        'options': [
+            _opt('day', 'Днём', 'daytime, bright natural daylight'),
+            _opt('evening', 'Вечером', 'evening, golden-hour to dusk, warm ambient light'),
+            _opt('night', 'Ночью', 'night, dark surroundings with dramatic stage and artificial light'),
+        ],
+    },
+    {
+        'key': 'venue',
+        'type': SINGLE,
+        'max_choices': 1,
+        'title': 'Где пройдёт?',
+        'subtitle': 'Один вариант',
+        'required': False,
+        'options': [
+            _opt('indoor', 'В помещении', 'an indoor venue with controlled architectural lighting'),
+            _opt('outdoor', 'На улице', 'an open-air outdoor setting with sky and environment visible'),
+        ],
+    },
 ]
 
 QUESTIONS_BY_KEY = {q['key']: q for q in QUESTIONS}
+
+
+def is_required(question):
+    return question.get('required', True)
 
 
 def options_by_value(key):
