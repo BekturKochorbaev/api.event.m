@@ -1,49 +1,123 @@
 {
   "slide": {
-    "type": "cover_title_slide",
+    "type": "grid_card_showcase_slide",
     "aspect_ratio": "16:9",
     "layout": {
-      "description": "title_left_image_right_location_date_bottom_left",
-      "columns": 2,
-      "rows": 1
+      "description": "logo_top_left_title_below_intro_paragraph_then_2x3_grid_of_icon_cards_each_with_image",
+      "columns": 3,
+      "rows": 2
     },
     "style": {
-      "background": "solid_black",
-      "overall_style": "bold_dramatic_corporate",
+      "background": "warm_off_white",
+      "overall_style": "elegant_corporate_editorial",
       "alignment": "left"
     },
     "elements": [
       {
         "id": "el_1",
-        "type": "title",
-        "role": "main_slide_title",
-        "position": { "x": 2, "y": 30, "width": 48, "height": 40 },
-        "content": "large two-line main title, vertically centered on the left half",
-        "typography": { "size": "xlarge", "weight": "regular", "alignment": "left", "style": "serif" },
-        "style": { "color": "light" }
+        "type": "logo",
+        "role": "brand_logo_top_left",
+        "position": { "x": 2, "y": 2, "width": 16, "height": 7 },
+        "content": "company logo mark with wordmark and small tagline beneath",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left" },
+        "style": { "color": "mixed_dark_and_accent" }
       },
       {
         "id": "el_2",
-        "type": "text",
-        "role": "location_and_date_label",
-        "position": { "x": 4, "y": 90, "width": 20, "height": 5 },
-        "content": "short location and year label",
-        "typography": { "size": "small", "weight": "regular", "alignment": "left", "style": "sans-serif" },
-        "style": { "color": "light" }
+        "type": "title",
+        "role": "main_slide_title",
+        "position": { "x": 2, "y": 10, "width": 96, "height": 10 },
+        "content": "large bold main section title, letter-spaced",
+        "typography": { "size": "xlarge", "weight": "bold", "alignment": "left", "style": "serif" },
+        "style": { "color": "dark" }
       },
       {
         "id": "el_3",
-        "type": "image",
-        "role": "main_visual",
-        "position": { "x": 50, "y": 20, "width": 48, "height": 60 },
-        "content": "main visual related to the slide topic, standalone photographic block on the right half",
-        "style": {
-          "shape": "rectangle",
-          "border_radius": "none",
-          "border": "none",
-          "background_or_block": "standalone_block",
-          "aspect_ratio": "landscape"
-        }
+        "type": "divider",
+        "role": "title_underline_with_center_mark",
+        "position": { "x": 2, "y": 20, "width": 96, "height": 2 },
+        "content": "full-width thin horizontal rule with small centered symbol",
+        "style": { "color": "accent", "thickness": "hairline" }
+      },
+      {
+        "id": "el_4",
+        "type": "text_block",
+        "role": "intro_descriptive_paragraph",
+        "position": { "x": 2, "y": 23, "width": 55, "height": 6 },
+        "content": "short two-line introductory paragraph explaining the slide's purpose",
+        "typography": { "size": "medium", "weight": "regular", "alignment": "left" },
+        "style": { "color": "dark" }
+      },
+      {
+        "id": "el_5",
+        "type": "card",
+        "role": "channel_card_1",
+        "position": { "x": 2, "y": 30, "width": 31, "height": 30 },
+        "content": "card with icon badge, numbered title, short description, and supporting image mockup below",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left" },
+        "style": { "color": "dark", "background": "white", "border_radius": "medium", "border": "thin_light" }
+      },
+      {
+        "id": "el_6",
+        "type": "card",
+        "role": "channel_card_2",
+        "position": { "x": 35, "y": 30, "width": 31, "height": 30 },
+        "content": "card with icon badge, numbered title, short description, and supporting image mockup below (browser/website style)",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left" },
+        "style": { "color": "dark", "background": "white", "border_radius": "medium", "border": "thin_light" }
+      },
+      {
+        "id": "el_7",
+        "type": "card",
+        "role": "channel_card_3",
+        "position": { "x": 68, "y": 30, "width": 31, "height": 30 },
+        "content": "card with icon badge, numbered title, short description, and supporting image mockup below (outdoor screen style)",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left" },
+        "style": { "color": "dark", "background": "white", "border_radius": "medium", "border": "thin_light" }
+      },
+      {
+        "id": "el_8",
+        "type": "card",
+        "role": "channel_card_4",
+        "position": { "x": 2, "y": 62, "width": 31, "height": 30 },
+        "content": "card with icon badge, numbered title, short description, and supporting image mockup below (phone-in-hand style)",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left" },
+        "style": { "color": "dark", "background": "white", "border_radius": "medium", "border": "thin_light" }
+      },
+      {
+        "id": "el_9",
+        "type": "card",
+        "role": "channel_card_5",
+        "position": { "x": 35, "y": 62, "width": 31, "height": 30 },
+        "content": "card with icon badge, numbered title, short description, and supporting image mockup below (invitation card style)",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left" },
+        "style": { "color": "dark", "background": "white", "border_radius": "medium", "border": "thin_light" }
+      },
+      {
+        "id": "el_10",
+        "type": "card",
+        "role": "channel_card_6",
+        "position": { "x": 68, "y": 62, "width": 31, "height": 30 },
+        "content": "card with icon badge, numbered title, short description, and supporting image mockup below (multi-phone social media UI style)",
+        "typography": { "size": "small", "weight": "regular", "alignment": "left" },
+        "style": { "color": "dark", "background": "white", "border_radius": "medium", "border": "thin_light" }
+      },
+      {
+        "id": "el_11",
+        "type": "divider",
+        "role": "footer_separator",
+        "position": { "x": 2, "y": 94, "width": 96, "height": 1 },
+        "content": "thin full-width horizontal rule above footer",
+        "style": { "color": "accent", "thickness": "hairline" }
+      },
+      {
+        "id": "el_12",
+        "type": "footer",
+        "role": "footer_tagline_and_page_number",
+        "position": { "x": 2, "y": 96, "width": 96, "height": 4 },
+        "content": "small icon plus tagline text on the left, page number on the right",
+        "typography": { "size": "xsmall", "weight": "regular", "alignment": "left" },
+        "style": { "color": "dark" }
       }
     ]
   }

@@ -1,58 +1,91 @@
 {
   "slide": {
-    "type": "title_numbered_list_image_slide",
+    "type": "numbered_title_bullets_with_image_and_process_card_slide",
     "aspect_ratio": "16:9",
     "layout": {
-      "description": "top_title_full_width_below_numbered_list_left_image_right",
+      "description": "numbered_title_top_left_bullet_list_below_left_process_flow_card_bottom_left_large_portrait_image_right",
       "columns": 2,
       "rows": 2
     },
     "style": {
-      "background": "solid_black",
-      "overall_style": "minimal_dark_corporate",
+      "background": "light_neutral_with_thick_dark_outer_border",
+      "overall_style": "ethnic_heritage_editorial",
       "alignment": "left"
     },
     "elements": [
       {
         "id": "el_1",
         "type": "title",
-        "role": "main_slide_title",
-        "position": { "x": 2, "y": 22, "width": 60, "height": 12 },
-        "content": "short title heading ending with a colon",
-        "typography": { "size": "xlarge", "weight": "regular", "alignment": "left", "style": "serif" },
-        "style": { "color": "light" }
+        "role": "numbered_main_slide_title",
+        "position": { "x": 4, "y": 8, "width": 68, "height": 10 },
+        "content": "numbered section title, short bold heading",
+        "typography": { "size": "xlarge", "weight": "bold", "alignment": "left", "style": "serif" },
+        "style": { "color": "dark" }
       },
       {
         "id": "el_2",
-        "type": "bullet_list",
-        "role": "numbered_key_points",
-        "position": { "x": 4, "y": 42, "width": 32, "height": 25 },
-        "content": "3 numbered list items, some wrapping to two lines",
-        "typography": { "size": "large", "weight": "regular", "alignment": "left", "style": "serif" },
-        "style": { "color": "light", "marker_style": "numbered" }
+        "type": "subtitle",
+        "role": "title_translation_or_secondary_heading",
+        "position": { "x": 4, "y": 17, "width": 30, "height": 5 },
+        "content": "secondary short label supporting the main title",
+        "typography": { "size": "medium", "weight": "regular", "alignment": "left", "style": "sans-serif" },
+        "style": { "color": "dark" }
       },
       {
         "id": "el_3",
-        "type": "text",
-        "role": "stray_bullet_marker",
-        "position": { "x": 2, "y": 78, "width": 3, "height": 3 },
-        "content": "small isolated punctuation mark below the list",
-        "typography": { "size": "medium", "weight": "regular", "alignment": "left" },
-        "style": { "color": "light" }
+        "type": "divider",
+        "role": "section_separator_with_accent_mark",
+        "position": { "x": 4, "y": 23, "width": 24, "height": 1 },
+        "content": "thin horizontal rule with small centered diamond accent",
+        "style": { "color": "accent", "thickness": "hairline" }
       },
       {
         "id": "el_4",
+        "type": "bullet_list",
+        "role": "supporting_key_points",
+        "position": { "x": 4, "y": 30, "width": 26, "height": 40 },
+        "content": "4 bullet points, each with small icon marker, two-line entries, generous vertical spacing",
+        "typography": { "size": "small", "weight": "medium", "alignment": "left" },
+        "style": { "color": "dark", "marker_style": "small_diamond_icon", "accent_color": "muted_red" }
+      },
+      {
+        "id": "el_5",
+        "type": "card",
+        "role": "sequential_process_flow_card",
+        "position": { "x": 4, "y": 76, "width": 30, "height": 18 },
+        "content": "bordered rounded card with a small title and 4 sequential icon steps connected by arrows, each with a short label below",
+        "typography": { "size": "small", "weight": "regular", "alignment": "center" },
+        "style": { "color": "dark", "background": "light", "border_radius": "medium", "border": "thin_light", "item_count": 4 }
+      },
+      {
+        "id": "el_6",
         "type": "image",
         "role": "main_visual",
-        "position": { "x": 36, "y": 39, "width": 62, "height": 58 },
-        "content": "main visual related to the slide topic, standalone photographic block on the right side",
+        "position": { "x": 33, "y": 0, "width": 67, "height": 92 },
+        "content": "main visual related to the slide topic, a full-height portrait figure standing before a wide background scene, with faded left edge blending into page background",
         "style": {
-          "shape": "rectangle",
+          "shape": "rectangle_full_bleed",
           "border_radius": "none",
           "border": "none",
-          "background_or_block": "standalone_block",
-          "aspect_ratio": "landscape"
+          "background_or_block": "background_bleed",
+          "edge_treatment": "left_edge_faded_gradient_into_page_background"
         }
+      },
+      {
+        "id": "el_7",
+        "type": "divider",
+        "role": "footer_separator",
+        "position": { "x": 4, "y": 94, "width": 92, "height": 1 },
+        "content": "thin full-width horizontal rule near bottom of slide",
+        "style": { "color": "accent", "thickness": "hairline" }
+      },
+      {
+        "id": "el_8",
+        "type": "shape",
+        "role": "decorative_pattern_watermark",
+        "position": { "x": 88, "y": 88, "width": 10, "height": 10 },
+        "content": "small faint decorative geometric pattern overlay in bottom right corner of the image",
+        "style": { "color": "faint_light" }
       }
     ]
   }
